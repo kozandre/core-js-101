@@ -462,8 +462,16 @@ function sortCitiesArray(/* arr */) {
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]
  */
-function getIdentityMatrix(/* n */) {
-  throw new Error('Not implemented');
+function getIdentityMatrix(n) {
+  return new Array(n).fill(0).map((row, rowIndex) => {
+    const temp = rowIndex;
+    return new Array(n).fill(0).map((col, colIndex) => {
+      const temp2 = colIndex;
+      const sum = temp + temp2;
+      console.log(sum);
+      return rowIndex === colIndex ? 1 : 0;
+    });
+  });
 }
 
 /**
